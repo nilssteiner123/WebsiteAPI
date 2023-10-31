@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function copyToClipboard() {
+            var copyText = "http://localhost/api_test.json"; // Hier den gewünschten Link eintragen
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Link wurde in die Zwischenablage kopiert: " + copyText);
+        }
+    </script>
+
+    <style>
+        body {
+            background: #27272d; /* Hintergrundfarbe */
+            text-align: center;
+            font-family: "Raleway", Arial, sans-serif; /* Moderne Schriftart hinzugefügt */
+            color: white;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Nur horizontal zentriert lassen */
+            background: #2f2f36; /* Hintergrundfarbe des Containers */
+            padding: 20px; /* Innenabstand für den Container */
+            border-radius: 10px; /* Abgerundete Ecken für den Container */
+        }
+
+        #container1 {
+            top: 40px; /* 20px Margin oben */
+        }
+
+        #container2 {
+            top: 160px; /* Abstand vom vorherigen Container */
+        }
+
+        #text1 {
+            color: #9292aa;
+            font-size: 48px;
+            font-weight: bold; /* Fett gedruckter Text hinzugefügt */
+        }
+
+        #text2 {
+            color: #9292aa;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .copy-button,
+        .open-button {
+            background-color: #9292aa;
+            color: #121214; /* Schriftfarbe auf dunkleres Weiß ändern */
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px; /* 10px Abstand zum vorherigen Element (text2) */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang für die Hintergrund- und Schriftfarbe */
+            border-radius: 10px; /* Abgerundete Kanten */
+        }
+
+        .copy-button:hover,
+        .open-button:hover {
+            background-color: #5f5f70; /* Hintergrundfarbe auf dunkleres Weiß ändern */
+            color: white; /* Schriftfarbe zurück zu Weiß ändern */
+        }
+    </style>
+</head>
+<body>
+    <div id="container1">
+        <div id="text1">API Test Website</div>
+    </div>
+    <div class="container" id="container2">
+        <div id="text2">JSON API 1</div>
+        <button class="copy-button" onclick="copyToClipboard()">Copy Link to clipboard</button>
+        <button class="open-button" onclick="window.location.href = 'http://localhost/api_test.json'">Open Link</button>
+    </div>
+</body>
+</html>
