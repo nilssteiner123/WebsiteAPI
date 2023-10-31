@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mein Atom-Feed</title>
+  <link href="https://www.example.com" />
+  <updated>2023-10-31T10:00:00Z</updated>
+  <author>
+    <name>Ihr Name</name>
+  </author>
+  <id>https://www.example.com</id>
+
+  <entry>
+    <title>Beitrag 1</title>
+    <link href="https://www.example.com/post/1" />
+    <id>https://www.example.com/post/1</id>
+    <updated>2023-10-31T10:15:00Z</updated>
+    <summary>Kurze Zusammenfassung des Beitrags 1.</summary>
+    <content type="html">&lt;p&gt;Inhalt des Beitrags 1.&lt;/p&gt;</content>
+  </entry>
+
+  <entry>
+    <title>Beitrag 2</title>
+    <link href="https://www.example.com/post/2" />
+    <id>https://www.example.com/post/2</id>
+    <updated>2023-10-31T10:30:00Z</updated>
+    <summary>Kurze Zusammenfassung des Beitrags 2.</summary>
+    <content type="html">&lt;p&gt;Inhalt des Beitrags 2.&lt;/p&gt;</content>
+  </entry>
+</feed>
