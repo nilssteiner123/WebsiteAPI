@@ -2,82 +2,165 @@
 <html>
 <head>
     <script>
-        function copyToClipboard() {
-            var copyText = "http://localhost/api_test.json"; // Hier den gewünschten Link eintragen
+        function copyToClipboardJSON() {
+            var apiLink = "http://localhost/api_test.json"; 
             var textArea = document.createElement("textarea");
-            textArea.value = copyText;
+            textArea.value = apiLink;
             document.body.appendChild(textArea);
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-            alert("Link wurde in die Zwischenablage kopiert: " + copyText);
+            alert("Link wurde in die Zwischenablage kopiert: " + apiLink);
         }
+
+        function copyToClipboardXMLRSS() {
+            var apiLink = "http://localhost/xml_rss_test.xml"; 
+            var textArea = document.createElement("textarea");
+            textArea.value = apiLink;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Link wurde in die Zwischenablage kopiert: " + apiLink);
+        }
+
+        function copyToClipboardXMLATOM() {
+            var apiLink = "http://localhost/xml_atom_test.xml";
+            var textArea = document.createElement("textarea");
+            textArea.value = apiLink;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Link wurde in die Zwischenablage kopiert: " + apiLink);
+        }
+
     </script>
 
     <style>
         body {
-            background: #27272d; /* Hintergrundfarbe */
+            background: #27272d;
             text-align: center;
-            font-family: "Raleway", Arial, sans-serif; /* Moderne Schriftart hinzugefügt */
+            font-family: "Raleway", Arial, sans-serif; 
             color: white;
         }
 
         .container {
             position: absolute;
             left: 50%;
-            transform: translateX(-50%); /* Nur horizontal zentriert lassen */
-            background: #2f2f36; /* Hintergrundfarbe des Containers */
-            padding: 20px; /* Innenabstand für den Container */
-            border-radius: 10px; /* Abgerundete Ecken für den Container */
+            transform: translateX(-50%);
+            background: #2f2f36;
+            padding: 20px;
+            border-radius: 10px;
+}
+
+        #headerContainer {
+            top: 80px;
         }
 
-        #container1 {
-            top: 40px; /* 20px Margin oben */
+        #containerheadline {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            top: 40px;
         }
 
-        #container2 {
-            top: 160px; /* Abstand vom vorherigen Container */
+        #jsonApiContainer {
+            top: 150px; 
+        }
+        
+        #xmlrssApiContainer {
+            top: 270px;
         }
 
-        #text1 {
+        #xmlatomApiContainer {
+            top: 390px;
+        }
+
+        #footercontainer {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sectionTitle {
             color: #9292aa;
             font-size: 48px;
-            font-weight: bold; /* Fett gedruckter Text hinzugefügt */
+            font-weight: bold; 
         }
 
-        #text2 {
+        .sectiondescription {
+            color: #9292aa;
+            font-size: 36;
+            font-weight: normal;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .sectionheadline {
+            color: #9292aa;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .sectionfooter {
+            margin-top: 750px;
+            margin-bottom: 10px;
+            color: #9292aa46;
+        }
+
+        .apiTitle {
             color: #9292aa;
             font-size: 24px;
             font-weight: bold;
         }
 
-        .copy-button,
-        .open-button {
-            background-color: #9292aa;
-            color: #121214; /* Schriftfarbe auf dunkleres Weiß ändern */
+        .copyButton,
+        .openButton {
+            background-color: #383843;  
+            color: #9292aa; 
             border: none;
             padding: 10px 20px;
-            margin-top: 10px; /* 10px Abstand zum vorherigen Element (text2) */
+            margin-top: 10px; 
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang für die Hintergrund- und Schriftfarbe */
-            border-radius: 10px; /* Abgerundete Kanten */
+            transition: background-color 0.2s, color 0.2s; 
+            border-radius: 7.5px;
         }
 
-        .copy-button:hover,
-        .open-button:hover {
-            background-color: #5f5f70; /* Hintergrundfarbe auf dunkleres Weiß ändern */
-            color: white; /* Schriftfarbe zurück zu Weiß ändern */
+        .copyButton:hover,
+        .openButton:hover {
+            background-color: #5f5f70;
+            color: #1c1c22; 
         }
+
     </style>
 </head>
 <body>
-    <div id="container1">
-        <div id="text1">API Test Website</div>
+    <div id="headerContainer">
+        <div class="sectionTitle">API Test Website</div>
     </div>
-    <div class="container" id="container2">
-        <div id="text2">JSON API 1</div>
-        <button class="copy-button" onclick="copyToClipboard()">Copy Link to clipboard</button>
-        <button class="open-button" onclick="window.location.href = 'http://localhost/api_test.json'">Open Link</button>
+    <div id="Containerheadline">
+        <div class="sectionheadline">API's</div>
+    </div>
+    <div class="container" id="jsonApiContainer">
+        <div class="apiTitle">JSON</div>
+        <button class="copyButton" onclick="copyToClipboardJSON()">Copy to clipboard</button>
+        <button class="openButton" onclick="window.location.href = 'http://localhost/api_test.json'">Open link</button>
+    </div>
+    <div class="container" id="xmlrssApiContainer">
+        <div class="apiTitle">XML RSS</div>
+        <button class="copyButton" onclick="copyToClipboardXMLRSS()">Copy to clipboard</button>
+        <button class="openButton" onclick="window.location.href = 'http://localhost/xml_rss_test.xml'">Open link</button>
+    </div>
+    <div class="container" id="xmlatomApiContainer">
+        <div class="apiTitle">XML ATOM</div>
+        <button class="copyButton" onclick="copyToClipboardXMLATOM()">Copy to clipboard</button>
+        <button class="openButton" onclick="window.location.href = 'http://localhost/xml_atom_test.xml'">Open link</button>
     </div>
 </body>
+<footer>
+    <div id >
+        <div class="sectionfooter" >"Open link" Does not work if the website was opened via Github.</div>
+    </div>
+</footer>
 </html>
