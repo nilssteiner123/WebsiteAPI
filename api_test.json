@@ -1,0 +1,25 @@
+{
+  "firmen": [
+    {
+      "name": "Firma A",
+      "ceo": "Max Mustermann",
+      "gründungsjahr": 2000,
+      "branche": "Technologie",
+      "standort": "Musterstadt"
+    },
+    {
+      "name": "Firma B",
+      "ceo": "Anna Meier",
+      "gründungsjahr": 1995,
+      "branche": "Finanzen",
+      "standort": "Musterstadt"
+    },
+    {
+      "name": "Firma C",
+      "ceo": "John Doe",
+      "gründungsjahr": 2010,
+      "branche": "Gesundheitswesen",
+      "standort": "Musterstadt"
+    }
+  ]
+}
